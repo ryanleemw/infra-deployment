@@ -4,6 +4,7 @@ resource "google_compute_subnetwork" "gcp_subnet" {
   count         = length(var.private_cidrs)
   name          = var.subnet[count.index]
   ip_cidr_range = var.private_cidrs[count.index]
+  project       = var.project
   region        = var.region[count.index]
   network       = google_compute_network.gcp_vpc.id
   dynamic "secondary_ip_range" {
@@ -17,6 +18,7 @@ resource "google_compute_subnetwork" "gcp_subnet" {
 }
 
 resource "google_compute_subnetwork" "gcp_proxy_subnet" {
+  project       = var.project
   name          = var.proxy_name
   ip_cidr_range = var.regional_proxy_range
   region        = var.region[1]
@@ -34,6 +36,7 @@ resource "google_compute_network" "gcp_vpc" {
 
 
 resource "google_compute_global_address" "apigee_range" {
+  project       = var.project
   name          = var.apigee_name
   purpose       = "VPC_PEERING"
   address_type  = "INTERNAL"
