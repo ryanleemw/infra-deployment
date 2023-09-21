@@ -1,5 +1,5 @@
 locals {
-  project          = "rwl-mde-factory"
+  project          = "rwl-factory-mde"
   region           = ["us-east1", "us-central1"]
   network          = "rwl-mde-factory-net"
   subnet           = ["rwl-use1-subnet1", "rwl-usc1-subnet2"]
