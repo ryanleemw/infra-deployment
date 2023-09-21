@@ -45,7 +45,7 @@ variable "region" {
 variable "project" {
   description = "the project number"
   type        = string
-  default     = "rwl-apigee2-azo-hostvpc"
+  default     = "rwl-factory-mde"
 }
 
 variable "apigee_name" {
