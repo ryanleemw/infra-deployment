@@ -1,7 +1,7 @@
 # --- root/provider.tf ---
 terraform {
   backend "gcs" {
-    bucket = "rwl-factory-mde-tf"
+    bucket = "new_tfstate_bucket"
     prefix = "terraform/state"
   }
   required_providers {
